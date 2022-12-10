@@ -1,8 +1,10 @@
 import React from 'react';
+import classes from './Profile.module.css';
+
 
 function Profile () {
     return (
-        <div className='content'>
+        <div className={classes.content}>
         <div>
         <img src='https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg' />
         </div>
@@ -15,14 +17,14 @@ function Profile () {
             New post
             </div>
         </div>
-        <div>
-            <div>
+        <div className='post'>
+            <div className={classes.item}>
             Post 1
             </div>
-            <div>
+            <div className={classes.item}>
             Post 2
             </div>
-            <div>
+            <div className={classes.item}>
             Post 3
             </div>
         </div>

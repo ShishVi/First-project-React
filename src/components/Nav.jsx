@@ -1,13 +1,14 @@
 import React from 'react';
+import classes from './Nav.module.css';
 
 function Nav () {
     return (
-        <nav className='nav'>
-            <div><a href='#'>Profile</a></div>
-            <div><a href='#'>Messages</a></div>
-            <div><a href='#'>News</a></div>
-            <div><a href='#'>Music</a></div>
-            <div><a href='#'>Setting</a></div>
+        <nav className= {classes.nav}>
+            <div className={classes.item}><a>Profile</a></div>
+            <div className={`${classes.item} ${classes.active}`}><a>Messages</a></div>
+            <div className={classes.item}><a>News</a></div>
+            <div className={classes.item}><a>Music</a></div>
+            <div className={classes.item}><a>Setting</a></div>
         </nav>
     );
 }
