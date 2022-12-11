@@ -15,8 +15,8 @@ function MyPosts () {
             </div>
         </div>
         <div className='post'>
-            <Post />
-            <Post />
+            <Post message = 'Hello! How are you?' likeCounts = '10'/>
+            <Post message = 'I am programmist React JS' likeCounts = '35'/>
             <Post />
             <Post />
             <Post />
