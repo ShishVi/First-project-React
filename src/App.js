@@ -25,7 +25,6 @@ const App = () => {
                         <Route path='/news' element={<News/>}/>
                         <Route path='/setting' element={<Setting/>}/>
                     </Routes>
-                    
                 </div>
             </div>
         </BrowserRouter>
