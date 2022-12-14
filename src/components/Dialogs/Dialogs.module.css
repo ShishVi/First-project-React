@@ -13,7 +13,7 @@
 
 }
 
-.active {
+.active a {
     color: yellow;
     font-weight: 600;
 }

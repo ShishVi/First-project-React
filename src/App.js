@@ -19,11 +19,11 @@ const App = () => {
                 <Nav/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/dialog' element={<Dialogs/>}/>
-                        <Route path='/profile' element={<Profile/>}/>
-                        <Route path='/music' element={<Music/>}/>
-                        <Route path='/news' element={<News/>}/>
-                        <Route path='/setting' element={<Setting/>}/>
+                        <Route path='/dialogs/*' element={<Dialogs/>}/>
+                        <Route path='/profile/*' element={<Profile/>}/>
+                        <Route path='/music/*' element={<Music/>}/>
+                        <Route path='/news/*' element={<News/>}/>
+                        <Route path='/setting/*' element={<Setting/>}/>
                     </Routes>
                 </div>
             </div>
