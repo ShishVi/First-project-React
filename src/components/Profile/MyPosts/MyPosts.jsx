@@ -2,10 +2,13 @@ import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css'
 
-let postDate =[
+let posts =[
     {id :'1', message:'Hello! How are you? This is my first post!', likesCount:65},
-    {id :'1', message:'I am a computer programmer React JS', likesCount:150},
+    {id :'1', message:'I am a computer programmer React JS', likesCount:128},
 ];
+
+let post = posts.map(m => <Post message={m.message} likeCounts={m.likesCount}/>)
+
 
 
 function MyPosts() {
@@ -24,8 +27,7 @@ function MyPosts() {
                 </div>
             </div>
             <div className='post'>
-                <Post message={postDate[0].message} likeCounts={postDate[0].likesCount}/>
-                <Post message={postDate[1].message} likeCounts={postDate[1].likesCount}/>
+                {post}
             </div>
         </div>
 
