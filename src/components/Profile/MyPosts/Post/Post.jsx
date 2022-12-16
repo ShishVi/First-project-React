@@ -14,10 +14,9 @@ function Post (props) {
                 <span> Like</span>
             </div>
         </div>
-            
       
         
-    );
+    )
 }
 
 export default Post;
