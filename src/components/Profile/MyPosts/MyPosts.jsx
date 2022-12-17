@@ -18,7 +18,7 @@ function MyPosts(props) {
                 </div>
             </div>
             <div className='post'>
-                {props.posts.map(m => <Post message={m.message} likeCounts={m.likesCount}/>)}
+                {props.state.posts.map(m => <Post message={m.message} likeCounts={m.likesCount}/>)}
             </div>
         </div>
 

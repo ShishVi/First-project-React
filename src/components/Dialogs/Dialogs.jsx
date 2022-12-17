@@ -13,10 +13,10 @@ const Dialogs = (props) => {
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItem}>
-                {props.dialogs.map(n => <DialogItem name={n.name} id ={n.id}/>)}
+                {props.state.dialogs.map(n => <DialogItem name={n.name} id ={n.id}/>)}
             </div>
             <div className={classes.messages}>
-                {props.messages.map(m => <Message message = {m.message}/>)}
+                {props.state.messages.map(m => <Message message = {m.message}/>)}
             </div>
         </div>
     );
