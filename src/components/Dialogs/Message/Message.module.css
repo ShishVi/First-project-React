@@ -1,28 +1,12 @@
-.dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-
-}
-
-.dialogsItem {
-    padding: 10px;
-
-}
-
-.dialog {
-
-}
-
-.active a {
-    color: yellow;
-    font-weight: 600;
-}
-
-.messages {
-    padding: 10px;
-
-}
-
 .message {
+    align-items: center;
+    display: flex;
+}
 
+
+.message img {
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
 }

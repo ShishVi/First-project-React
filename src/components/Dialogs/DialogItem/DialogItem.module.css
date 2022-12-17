@@ -1,21 +1,21 @@
-.dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
 
-}
 
-.dialogsItem {
-    padding: 10px;
-
+.dialog img {
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
 }
 
 .dialog {
-
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .active a {
     color: yellow;
     font-weight: 600;
+
 }
 
 .messages {
