@@ -6,9 +6,13 @@ function MyPosts(props) {
 
     let newPostElement = React.createRef(); // создаем ссылку на элемент
     let addPost = () => {
+        debugger;
         let textPost = newPostElement.current.value;
-        alert(textPost);
+        props.addPost(textPost);
+
+
     }
+
     return (
         <div className={classes.postsProfile}>
             <div>
