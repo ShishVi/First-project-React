@@ -1,17 +1,19 @@
 import React from 'react';
 import Post from './Post/Post';
-import classes from './MyPosts.module.css'
+import classes from './MyPosts.module.css';
+
 
 function MyPosts(props) {
 
     let newPostElement = React.createRef(); // создаем ссылку на элемент
     let addPost = () => {
-        debugger;
-        let textPost = newPostElement.current.value;
-        props.addPost(textPost);
-
-
+        props.addPost();
     }
+    let onPostChange = () =>{
+        let textPost = newPostElement.current.value;
+        props.changeAddPostText (textPost);
+    }
+
 
     return (
         <div className={classes.postsProfile}>
@@ -19,7 +21,7 @@ function MyPosts(props) {
                 <h3>My posts</h3>
                 <div className={classes.addPosts}>
                     <div>
-                        <textarea ref={newPostElement}></textarea>
+                        <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
                     </div>
                     <div>
                         <button onClick={addPost}>Add Post</button>

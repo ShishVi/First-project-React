@@ -8,7 +8,7 @@ function Profile(props) {
     return (
         <div>
             <InfoProfile/>
-            <MyPosts state={props.state} addPost={props.addPost} />
+            <MyPosts state={props.state} addPost={props.addPost} newPostText={props.state.newPostText} changeAddPostText={props.changeAddPostText}/>
 
         </div>
     );
