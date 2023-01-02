@@ -7,11 +7,12 @@ function MyPosts(props) {
 
     let newPostElement = React.createRef(); // создаем ссылку на элемент
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type: 'ADD-POST'});
     }
     let onPostChange = () =>{
+
         let textPost = newPostElement.current.value;
-        props.changeAddPostText (textPost);
+        props.dispatch ({type: 'CHANGE-ADD-POST-TEXT', newText: textPost});
     }
 
 
