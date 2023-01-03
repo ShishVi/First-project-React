@@ -1,18 +1,20 @@
 import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css';
+import {addPostActionCreator, changeAddPostTextActionCreator} from "../../../Redux/State";
+
 
 
 function MyPosts(props) {
 
     let newPostElement = React.createRef(); // создаем ссылку на элемент
     let addPost = () => {
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
     let onPostChange = () =>{
 
         let textPost = newPostElement.current.value;
-        props.dispatch ({type: 'CHANGE-ADD-POST-TEXT', newText: textPost});
+        props.dispatch (changeAddPostTextActionCreator(textPost));
     }
 
 
