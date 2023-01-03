@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const CHANGE_ADD_POST_TEXT = 'CHANGE-ADD-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const CHANGE_ADD_MESSAGE_TEXT = 'CHANGE-ADD-MESSAGE-TEXT';
 
 
 let store = {
@@ -18,6 +20,7 @@ let store = {
                 {id: '3', message: 'I am Vitaly! What is your name?',},
                 {id: '4', message: 'Good morning!',},
             ],
+            newMessageDialogs: 'Input new message',
             dialogs: [
                 {
                     id: '1',
@@ -94,9 +97,27 @@ let store = {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
+        else if (action.type === SEND_MESSAGE) {
+            let newMessage = {
+                id: 5,
+                message: this._state.dialogsPage.newMessageDialogs,
+            };
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageDialogs = '';
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === CHANGE_ADD_MESSAGE_TEXT) {
+            this._state.dialogsPage.newMessageDialogs = action.textMessage;
+            this._callSubscriber(this._state);
+        }
     },
 }
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const changeAddPostTextActionCreator = (textPost) => ({type: CHANGE_ADD_POST_TEXT, newText: textPost});
+export const addMessageActionCreator = () => ({type: SEND_MESSAGE});
+
+export const onMessageTextActionCreator = (textMessage) => ({type: CHANGE_ADD_MESSAGE_TEXT, textMessage: textMessage})
+
+
 
     export default store;

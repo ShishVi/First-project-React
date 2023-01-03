@@ -12,6 +12,7 @@ import Setting from "./components/Setting/Setting";
 
 
 
+
 const App = (props) => {
     return (
         <BrowserRouter>
@@ -20,7 +21,7 @@ const App = (props) => {
                 <Nav state={props.state.sideBar}/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage}/>}/>
+                        <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
                         <Route path='/profile/*' element={<Profile state = {props.state.profilePage} dispatch={props.dispatch}/>}/>
                         <Route path='/music/*' element={<Music/>}/>
                         <Route path='/news/*' element={<News/>}/>
