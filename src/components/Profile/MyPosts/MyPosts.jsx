@@ -1,21 +1,20 @@
 import React from 'react';
 import Post from './Post/Post';
 import classes from './MyPosts.module.css';
-import {addPostActionCreator, changeAddPostTextActionCreator} from "../../../Redux/ProfilePageReducer";
-
-
 
 function MyPosts(props) {
 
+
     let newPostElement = React.createRef(); // создаем ссылку на элемент
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
     let onPostChange = () =>{
-
         let textPost = newPostElement.current.value;
-        props.dispatch (changeAddPostTextActionCreator(textPost));
+        props.onPostChange(textPost);
+
     }
+
 
 
     return (
@@ -33,7 +32,7 @@ function MyPosts(props) {
                 </div>
             </div>
             <div className='post'>
-                {props.state.posts.map(m => <Post message={m.message} likeCounts={m.likesCount}/>)}
+                {props.posts.map(m => <Post message={m.message} likeCounts={m.likesCount}/>)}
             </div>
         </div>
 

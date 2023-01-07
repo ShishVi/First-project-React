@@ -8,15 +8,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <App state={state} dispatch={store.dispatch.bind(store)} />
+            <App store={state} />
         </React.StrictMode>
     );
 };
 
-rerenderEntireTree(store.getState());
+rerenderEntireTree(store);
 store.subscribe (() => {
-    let state = store.getState()
-    rerenderEntireTree(state);
+    rerenderEntireTree(store);
 });
 
 
