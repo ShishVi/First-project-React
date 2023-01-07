@@ -2,9 +2,10 @@ import React from 'react';
 import classes from './Nav.module.css';
 import {NavLink} from "react-router-dom";
 import BestFriend from "../BestFriend/BestFriend";
-import DialogItem from "../Dialogs/DialogItem/DialogItem";
 
 function Nav (props) {
+
+    let bestfriend = props.state.sideBar.map(n => <BestFriend name={n.name} foto={n.avatarUser}/>)
     return (
         <div className= {classes.nav}>
 
@@ -18,7 +19,7 @@ function Nav (props) {
         <div>
             <h3>Friends</h3>
             <div className= {classes.sidebar}>
-                {props.state.map(n => <BestFriend name={n.name} foto={n.avatarUser}/>)}
+                {bestfriend}
             </div>
         </div>
         </div>
