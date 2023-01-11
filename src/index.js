@@ -3,20 +3,17 @@ import store from "./Redux/Store-redux";
 import './index.css';
 import App from './App';
 import ReactDOM from "react-dom/client";
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (state) => {
     root.render(
         <React.StrictMode>
-            <App store={state} />
+            <Provider store={store}>
+                <App />
+            </Provider>
         </React.StrictMode>
     );
-};
 
-rerenderEntireTree(store);
-store.subscribe (() => {
-    rerenderEntireTree(store);
-});
 
 
 
