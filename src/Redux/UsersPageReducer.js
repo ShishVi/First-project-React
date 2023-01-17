@@ -3,11 +3,10 @@ const UNFOLLOW = 'unfollow';
 const SETUSERS = 'setusers';
 
 let initialstate = {
-    users: [
-        {id: '1', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: false, fullName: 'Vitaly', status: 'I am happy', location:{country: 'Russia', city: 'Saransk'}},
-        {id: '2', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: true, fullName: 'Sergey', status: 'I am a boss', location:{country: 'Belarus', city: 'Misk'}},
-        {id: '3', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: false, fullName: 'Dmitry', status: 'Let"s go', location:{country: 'Russia', city: 'Moscow'}},
-    ],
+    users: [/*{id: '1', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: false, fullName: 'Vitaly', status: 'I am happy', location:{country: 'Russia', city: 'Saransk'}},
+    {id: '2', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: true, fullName: 'Sergey', status: 'I am a boss', location:{country: 'Belarus', city: 'Misk'}},
+    {id: '3', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: false, fullName: 'Dmitry', status: 'Let"s go', location:{country: 'Russia', city: 'Moscow'}},
+*/],
     
 };
 const usersPageReducer = (state = initialstate, action) => {
@@ -40,9 +39,7 @@ const usersPageReducer = (state = initialstate, action) => {
             };
         }
         case SETUSERS: {
-            return {
-                ...state, users:[...state.users, ...action.Users],
-            };
+            return {...state, users:[...action.Users]};
         }
 
         default:
