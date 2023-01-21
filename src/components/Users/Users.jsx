@@ -17,7 +17,7 @@ let Users = (props) => {
             
         };
 
-    return <div>
+    return  <div>
 
             <div className={styles.pagination_wrapper}>
                 {
@@ -52,6 +52,6 @@ let Users = (props) => {
             </div>)
     
         }
-    </div>
+            </div>
 }
 export default Users;

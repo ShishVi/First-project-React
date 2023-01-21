@@ -3,6 +3,7 @@ const UNFOLLOW = 'unfollow';
 const SETUSERS = 'setusers';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 let initialstate = {
     users: [/*{id: '1', fotoUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', followed: false, fullName: 'Vitaly', status: 'I am happy', location:{country: 'Russia', city: 'Saransk'}},
@@ -12,6 +13,7 @@ let initialstate = {
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
+    isFetching: true,
     
 };
 const usersPageReducer = (state = initialstate, action) => {
@@ -55,6 +57,10 @@ const usersPageReducer = (state = initialstate, action) => {
             return {...state, totalUsersCount:action.totalCount};
         }
 
+        case TOGGLE_IS_FETCHING: {
+            return {...state, isFetching:action.isFetching};
+        }
+
 
         default:
             return state;
@@ -65,5 +71,6 @@ export const unfollowAC = (UserId) => ({type: UNFOLLOW, UserId});
 export const setUsersAC = (Users) => ({type: SETUSERS, Users});
 export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setTotalUsersCountAC = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount});
+export const setIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 export default usersPageReducer;
