@@ -66,11 +66,11 @@ const usersPageReducer = (state = initialstate, action) => {
             return state;
     }
 };
-export const followAC = (UserId) => ({type: FOLLOW, UserId});
-export const unfollowAC = (UserId) => ({type: UNFOLLOW, UserId});
-export const setUsersAC = (Users) => ({type: SETUSERS, Users});
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setTotalUsersCountAC = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount});
-export const setIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
+export const follow = (UserId) => ({type: FOLLOW, UserId});
+export const unfollow = (UserId) => ({type: UNFOLLOW, UserId});
+export const setUsers = (Users) => ({type: SETUSERS, Users});
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setTotalUsersCount = (totalCount) => ({type: SET_TOTAL_USERS_COUNT, totalCount});
+export const setIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 export default usersPageReducer;
